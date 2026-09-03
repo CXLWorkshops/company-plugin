@@ -1,0 +1,15 @@
+{
+  "name": "company-plugin",
+  "owner": {
+    "name": "CXLWorkshops",
+    "url": "https://github.com/CXLWorkshops"
+  },
+  "description": "CXLWorkshops shared Claude Code plugin marketplace — self-hosts the company-plugin.",
+  "plugins": [
+    {
+      "name": "company-plugin",
+      "description": "Shared agents/skills for multi-client content work: writing (newsletter, LinkedIn, blog, webinar landing), content freshness audits, AEO/GEO optimization, and QA.",
+      "source": "./"
+    }
+  ]
+}
