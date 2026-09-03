@@ -23,6 +23,16 @@ Adapted from an existing multi-client content system (originally built in a pers
 - `aeo-geo-optimization` — restructure a post so LLMs can extract and cite it
 - `qa-draft` — the three-gate QA checklist the `qa-reviewer` agent runs
 
+**Hooks** (automatic, no invocation needed once installed):
+
+| Hook | Event | What it does |
+|---|---|---|
+| `load-recent-logs.sh` | SessionStart | Loads the 2 most recent `daily-logs/*.md` files into context, so every session starts with continuity |
+| `catch-up-logs.sh` + `catch-up-logs-run.sh` | SessionStart | Backfills any missing daily logs from transcripts on disk (covers sessions that ended uncleanly — closed terminal, crash, sleep) |
+| `auto-shutdown.sh` + `auto-shutdown-run.sh` | SessionEnd | Summarizes the session transcript via a headless `claude -p` call and writes/overwrites `daily-logs/<date>-convo.md`, detached so closing the session isn't blocked |
+
+**Requirements for the hooks to work:** `jq` and the `claude` CLI must be on `PATH` for whoever's running the session (both are standard for anyone using Claude Code already). No configuration needed beyond installing the plugin — the hooks fire automatically in any repo that has it installed, writing into that repo's own `daily-logs/` folder. Customize the summary structure by editing `hooks/auto-shutdown-prompt.md` in this repo.
+
 ## How it works: multi-client by design
 
 Every agent/skill here resolves a **client** from the request (e.g. "write a blog for company Y"), defaulting to **CXL** when unnamed, and grounds everything in that client's `wiki/<Client>/` folder inside the installing repo:

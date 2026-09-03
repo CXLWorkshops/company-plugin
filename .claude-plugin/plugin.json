@@ -1,12 +1,13 @@
 {
   "name": "company-plugin",
   "displayName": "CXLWorkshops Company Plugin",
-  "version": "0.1.0",
-  "description": "Shared 'how we work' layer for CXLWorkshops: multi-client content agents (copywriter, blog-update, qa-reviewer) and the skills they run (newsletter, LinkedIn, blog, webinar-landing writing; content freshness audits; AEO/GEO optimization; QA). Installed once, available in every <team>-os repo.",
+  "version": "0.2.0",
+  "description": "Shared 'how we work' layer for CXLWorkshops: multi-client content agents (copywriter, blog-update, qa-reviewer) and the skills they run (newsletter, LinkedIn, blog, webinar-landing writing; content freshness audits; AEO/GEO optimization; QA), plus automatic daily-log hooks (session-start continuity, session-end summarization). Installed once, available in every <team>-os repo.",
   "author": {
     "name": "CXLWorkshops"
   },
   "repository": "https://github.com/CXLWorkshops/company-plugin",
   "license": "UNLICENSED",
-  "keywords": ["content", "copywriting", "qa", "geo", "aeo", "cxl"]
+  "keywords": ["content", "copywriting", "qa", "geo", "aeo", "cxl", "daily-logs"],
+  "hooks": "./hooks/hooks.json"
 }
