@@ -1,13 +1,13 @@
 {
   "name": "company-plugin",
   "displayName": "CXLWorkshops Company Plugin",
-  "version": "0.4.0",
-  "description": "Shared 'how we work' layer for CXLWorkshops: bundled reference frameworks (GEO, content recycling, B2B funnels) plus automatic daily-log hooks (session-start continuity, session-end summarization). agents/ and skills/ are placeholders for now. Installed once, available in every <team>-os repo.",
+  "version": "0.5.0",
+  "description": "Shared 'how we work' layer for CXLWorkshops: bundled reference frameworks (GEO, content recycling, B2B funnels), automatic daily-log hooks (session-start continuity, session-end summarization), and a /team-update command that turns your daily logs into a team-updates/ PR for admin review. agents/ and skills/ are placeholders for now. Installed once, available in every <team>-os repo.",
   "author": {
     "name": "CXLWorkshops"
   },
   "repository": "https://github.com/CXLWorkshops/company-plugin",
   "license": "UNLICENSED",
-  "keywords": ["content", "copywriting", "qa", "geo", "aeo", "cxl", "daily-logs", "frameworks"],
+  "keywords": ["content", "copywriting", "qa", "geo", "aeo", "cxl", "daily-logs", "frameworks", "team-updates"],
   "hooks": "./hooks/hooks.json"
 }
