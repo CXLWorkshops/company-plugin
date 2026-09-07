@@ -6,24 +6,9 @@ Part of the [Company OS](https://github.com/CXLWorkshops/company-os) setup. This
 
 ## What's bundled
 
-Adapted from an existing multi-client content system (originally built in a personal Obsidian vault, generalized here to work in any `<team>-os` repo).
+**Agents and skills are currently empty placeholders** (`agents/.gitkeep`, `skills/.gitkeep`) — this plugin ships frameworks and hooks only for now. Add agent/skill files to those folders and they'll be picked up automatically (no manifest changes needed); see [Contributing changes](#contributing-changes).
 
-**Agents:**
-
-| Agent | Job |
-|---|---|
-| `copywriter` | Write new content in a resolved client's voice: newsletters, LinkedIn posts/carousels, blog posts, webinar landing pages |
-| `blog-update` | Revamp existing blog posts: fix outdated info, then optimize for AEO/GEO (LLM answer-engine citations) |
-| `qa-reviewer` | Last gate before publish — fact-checks drafts via web search, checks tone-of-voice compliance, checks reference conventions |
-
-**Skills** (invoked by the agents above, or standalone):
-
-- `write-newsletter`, `write-linkedin`, `write-blog`, `write-webinar-landing` — format-specific writing
-- `content-freshness` — audit and fix outdated claims in a post
-- `aeo-geo-optimization` — restructure a post so LLMs can extract and cite it
-- `qa-draft` — the three-gate QA checklist the `qa-reviewer` agent runs
-
-**Frameworks** (reference playbooks the agents/skills above read at `${CLAUDE_PLUGIN_ROOT}/frameworks/`, see [frameworks/README.md](frameworks/README.md) for the full list and sourcing — three of the five are operational distillations of CXL Institute courses, credited in each file's frontmatter):
+**Frameworks** (reference playbooks at `${CLAUDE_PLUGIN_ROOT}/frameworks/`, readable directly or referenced by any agent/skill added later — see [frameworks/README.md](frameworks/README.md) for the full list and sourcing; three of the five are operational distillations of CXL Institute courses, credited in each file's frontmatter):
 
 - `geo-optimization-best-practices.md`, `seo-geo-revamp-frameworks.md` — GEO/AEO optimization and large-site SEO revamp
 - `content-recycling-best-practices.md`, `content-repurposing-frameworks.md` — repurposing and topic-arc planning
@@ -39,25 +24,9 @@ Adapted from an existing multi-client content system (originally built in a pers
 
 **Requirements for the hooks to work:** `jq` and the `claude` CLI must be on `PATH` for whoever's running the session (both are standard for anyone using Claude Code already). No configuration needed beyond installing the plugin — the hooks fire automatically in any repo that has it installed, writing into that repo's own `daily-logs/` folder. Customize the summary structure by editing `hooks/auto-shutdown-prompt.md` in this repo.
 
-## How it works: multi-client by design
+## Adding agents/skills later
 
-Every agent/skill here resolves a **client** from the request (e.g. "write a blog for company Y"), defaulting to **CXL** when unnamed, and grounds everything in that client's `wiki/<Client>/` folder inside the installing repo:
-
-```
-<team>-os/
-└── wiki/
-    └── <Client>/
-        ├── tone-of-voice.md              ← required: the voice contract
-        ├── Newsletter examples/
-        ├── Linkedin captions examples/
-        ├── Carousel examples/
-        ├── Blog Examples/
-        └── Webinar landing page copy examples/
-```
-
-If a client's `tone-of-voice.md` is missing, the agents stop and offer to scaffold it rather than falling back to CXL's voice. Onboarding a new client is just creating its `wiki/<Client>/` folder — the plugin picks it up automatically. Example folders are optional calibration aids; the skills degrade gracefully (and say so) when they're missing. The `frameworks/` playbooks above are bundled with the plugin itself (not per-client), so they're always present regardless of which client a draft is for.
-
-All drafts save to `drafts/` in the installing repo. Sources are never overwritten.
+Drop a `.md` agent file into `agents/`, or a `<skill-name>/SKILL.md` into `skills/`, and it's auto-discovered — no manifest edit needed (`plugin.json` doesn't hardcode paths to them). If you're rebuilding a multi-client content system like the one this plugin previously carried, the convention worth keeping: resolve a **client** from the request, ground each agent/skill in that client's `wiki/<Client>/tone-of-voice.md` plus example folders inside the installing repo, and have it stop and offer to scaffold the client folder if that file's missing rather than defaulting to one client's voice for another. Reference `${CLAUDE_PLUGIN_ROOT}/frameworks/` for the bundled playbooks — that path resolves correctly regardless of where the plugin is installed from.
 
 ## Installing this plugin into a team-os repo
 
