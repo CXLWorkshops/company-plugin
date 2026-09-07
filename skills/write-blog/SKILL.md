@@ -15,9 +15,9 @@ This skill is multi-client. The client is whoever the request names ("...for com
 
 1. Read the client's tone of voice: `wiki/<Client>/tone-of-voice.md`. The anti-examples define the failure modes to avoid.
 2. Skim 1–2 files from the client's `Blog Examples/` folder if present, to calibrate structure and density.
-3. If the post has an SEO/GEO angle, check `wiki/<Client>/frameworks/` (if present) for the client's optimization playbook before re-deriving tactics.
-4. If the post is part of a planned series or will be repurposed (social, newsletter, ebook), write modularly (snippets → subject → topic), format for scanning and extraction (pull-out quotes, stats, lists that lift cleanly into other formats), and note which topic arc the post belongs to.
-5. Before finalizing, self-audit against a content quality checklist: hook, visuals at every scroll depth, evidence per claim, heavy structure, expert quotes/multiple POVs, a genuine personal angle or original data, topical completeness. Avoid generic AI phrasing on top of the client's banned words; never ship prose a reader could have generated themselves with a one-line prompt.
+3. If the post has an SEO/GEO angle, read `${CLAUDE_PLUGIN_ROOT}/frameworks/seo-geo-revamp-frameworks.md` before re-deriving tactics.
+4. If the post is part of a planned series or will be repurposed (social, newsletter, ebook), apply `${CLAUDE_PLUGIN_ROOT}/frameworks/content-recycling-best-practices.md`: write modularly (snippets → subject → topic), format for scanning and extraction (pull-out quotes, stats, lists that lift cleanly into other formats), and note which topic arc the post belongs to.
+5. Before finalizing, self-audit against the content quality checklist in `${CLAUDE_PLUGIN_ROOT}/frameworks/b2b-content-funnels-with-ai-best-practices.md` §5: hook, visuals at every scroll depth, evidence per claim, heavy structure, expert quotes/multiple POVs, a genuine personal angle or original data, topical completeness. Its §9 AI-phrasing blocklist applies on top of the client's banned words; never ship prose a reader could have generated themselves with a one-line prompt.
 
 ## Structure
 

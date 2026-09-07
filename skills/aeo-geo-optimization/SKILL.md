@@ -9,8 +9,8 @@ Take an existing blog post and make it more likely to be retrieved, extracted, a
 
 ## Before optimizing
 
-1. If the repo has a deeper GEO/AEO playbook under `wiki/<Client>/frameworks/` (e.g. a distilled course note or an SEO/GEO revamp framework), read it first and apply its tactics instead of re-deriving them; the layers below are the fallback baseline when no such note exists.
-2. For commercial-intent pages (service, product, comparison, landing), the goal is AI *recommendation*, not just visibility: explicit reasons to believe, named buyer personas, and quantified outcomes as literal text matter more than keyword coverage.
+1. Read `${CLAUDE_PLUGIN_ROOT}/frameworks/geo-optimization-best-practices.md` first and apply its tactics instead of re-deriving them; the layers below are the fallback baseline for anything it doesn't cover. If the post is part of a larger site revamp, also read `${CLAUDE_PLUGIN_ROOT}/frameworks/seo-geo-revamp-frameworks.md` for the audit/consolidation context.
+2. For commercial-intent pages (service, product, comparison, landing), read `${CLAUDE_PLUGIN_ROOT}/frameworks/b2b-content-funnels-with-ai-best-practices.md` §7: the goal there is AI *recommendation*, not just visibility — explicit reasons to believe, named buyer personas, and quantified outcomes as literal text matter more than keyword coverage.
 3. Read the client's voice contract: `wiki/<Client>/tone-of-voice.md`. Optimization must not flatten the voice; a post that reads like generated filler loses the E-E-A-T signals that make it citeable in the first place. If the client has no tone-of-voice file, preserve the post's existing style and flag the gap.
 4. If the client has strong reference posts in `wiki/<Client>/Blog Examples/`, skim one as a model of what an extraction-ready post looks like in practice.
 5. Get the source: a repo file (read it), a URL (fetch it), or pasted content. If Search Console tools are available in the session, pull the page's top queries first; the real queries tell you which questions the post must answer directly. Don't assume the connector exists; check before relying on it.

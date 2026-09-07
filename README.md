@@ -23,6 +23,12 @@ Adapted from an existing multi-client content system (originally built in a pers
 - `aeo-geo-optimization` — restructure a post so LLMs can extract and cite it
 - `qa-draft` — the three-gate QA checklist the `qa-reviewer` agent runs
 
+**Frameworks** (reference playbooks the agents/skills above read at `${CLAUDE_PLUGIN_ROOT}/frameworks/`, see [frameworks/README.md](frameworks/README.md) for the full list and sourcing — three of the five are operational distillations of CXL Institute courses, credited in each file's frontmatter):
+
+- `geo-optimization-best-practices.md`, `seo-geo-revamp-frameworks.md` — GEO/AEO optimization and large-site SEO revamp
+- `content-recycling-best-practices.md`, `content-repurposing-frameworks.md` — repurposing and topic-arc planning
+- `b2b-content-funnels-with-ai-best-practices.md` — conversion copy, content quality checklist, AI-phrasing blocklist
+
 **Hooks** (automatic, no invocation needed once installed):
 
 | Hook | Event | What it does |
@@ -46,11 +52,10 @@ Every agent/skill here resolves a **client** from the request (e.g. "write a blo
         ├── Linkedin captions examples/
         ├── Carousel examples/
         ├── Blog Examples/
-        ├── Webinar landing page copy examples/
-        └── frameworks/                    ← optional: deeper playbooks (GEO, content recycling, etc.)
+        └── Webinar landing page copy examples/
 ```
 
-If a client's `tone-of-voice.md` is missing, the agents stop and offer to scaffold it rather than falling back to CXL's voice. Onboarding a new client is just creating its `wiki/<Client>/` folder — the plugin picks it up automatically. Example folders and `frameworks/` notes are optional calibration aids; the skills degrade gracefully (and say so) when they're missing.
+If a client's `tone-of-voice.md` is missing, the agents stop and offer to scaffold it rather than falling back to CXL's voice. Onboarding a new client is just creating its `wiki/<Client>/` folder — the plugin picks it up automatically. Example folders are optional calibration aids; the skills degrade gracefully (and say so) when they're missing. The `frameworks/` playbooks above are bundled with the plugin itself (not per-client), so they're always present regardless of which client a draft is for.
 
 All drafts save to `drafts/` in the installing repo. Sources are never overwritten.
 

@@ -16,7 +16,7 @@ This skill is multi-client. The client is whoever the request names ("...for com
 1. Read the client's tone of voice: `wiki/<Client>/tone-of-voice.md` (especially any Social Media / LinkedIn section and the anti-examples).
 2. Read the client's caption examples if present (`wiki/<Client>/Linkedin captions examples/`), covering the main post types: research findings, data analysis, program/webinar announcements, listening/trend explainers. This is the primary calibration file for captions.
 3. For carousels, also skim 1–2 files from the client's carousel examples if present (`wiki/<Client>/Carousel examples/`).
-4. If repurposing existing content (newsletter edition, blog post), read the source and extract the single strongest claim plus its 2–3 best proof points. A LinkedIn post carries one idea; resist compressing the whole source in. Extract, don't syndicate: quotes, stats, questions, and images that link back to the source beat re-posting the whole piece. Selection filter: people share what makes them look smart or validates a belief.
+4. If repurposing existing content (newsletter edition, blog post), read the source and extract the single strongest claim plus its 2–3 best proof points. A LinkedIn post carries one idea; resist compressing the whole source in. This is the extract-don't-syndicate rule from `${CLAUDE_PLUGIN_ROOT}/frameworks/content-recycling-best-practices.md`: quotes, stats, questions, and images that link back to the source beat re-posting the whole piece. Its snippets-of-value checklist (people share what makes them look smart or validates a belief) is the selection filter.
 
 ## Captions
 

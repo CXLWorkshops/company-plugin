@@ -16,7 +16,7 @@ This skill is multi-client. The client is whoever the request names ("...for com
 1. Read the client's tone of voice: `wiki/<Client>/tone-of-voice.md`. It is the contract for voice; the anti-examples matter as much as the examples.
 2. Skim 1–2 editions from the client's `Newsletter examples/` folder if it exists, to calibrate rhythm and structure. Match them; don't copy them.
 3. Check for a newsletter project note in `wiki/<Client>/` for open topic commitments or angle notes if the topic isn't fully specified.
-4. If the repo documents content-recycling conventions (e.g. `wiki/<Client>/frameworks/`), apply them: plan in topic arcs (6–12 editions on one theme that can consolidate into an ebook/webinar/course) and write snippets of value (stats, quotable one-liners) that extract cleanly for social. If no such notes exist, default to those principles anyway.
+4. Apply `${CLAUDE_PLUGIN_ROOT}/frameworks/content-recycling-best-practices.md`: plan in topic arcs (6–12 editions on one theme that can consolidate into an ebook/webinar/course) and write snippets of value (stats, quotable one-liners) that extract cleanly for social.
 
 ## Structure
 

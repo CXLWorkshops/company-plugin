@@ -5,7 +5,7 @@ description: "Write webinar landing page copy in the client's voice (default cli
 
 # Write Webinar Landing Page
 
-Write registration-page copy for one webinar. This is conversion copy, not content: the visitor has commercial-adjacent intent, the conversion event is the registration, and every element exists to move them toward it. Each webinar is also a cheap test of a bigger content investment — registrations are the commitment signal, so the copy must be specific enough that the signal means something.
+Write registration-page copy for one webinar. This is conversion copy, not content: the visitor has commercial-adjacent intent, the conversion event is the registration, and every element exists to move them toward it. Per `${CLAUDE_PLUGIN_ROOT}/frameworks/content-recycling-best-practices.md` §4, each webinar is also a cheap test of a bigger content investment — registrations are the commitment signal, so the copy must be specific enough that the signal means something.
 
 ## Client resolution (first step)
 
@@ -16,7 +16,7 @@ This skill is multi-client. The client is whoever the request names ("...for com
 1. Read the client's tone of voice: `wiki/<Client>/tone-of-voice.md`. The anti-examples define the failure modes.
 2. Read the client's `Webinar landing page copy examples/` folder if present. Match the pattern; don't copy the copy.
 3. Check `wiki/<Client>/` for the relevant webinar program's current positioning, audience, and any topic commitments the page must align with.
-4. Use an **Answers → Evidence → CTA** structure throughout: the persona's decision criteria decide what goes above the fold, and every section must survive the specificity test below.
+4. Apply `${CLAUDE_PLUGIN_ROOT}/frameworks/b2b-content-funnels-with-ai-best-practices.md` §8 as the conversion playbook: the page is a repeating sequence of **Answers → Evidence → CTA**, the persona's decision criteria decide what goes above the fold, and every section must survive the specificity test below.
 
 ## Structure
 
